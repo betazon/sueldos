@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block cuerpo %}
+<h3>
+Listado de Liquidaciones 
+</h3>
+
+
+<form role="form" class="form-inline">
+				
+				<div class="form-group">
+					 
+					<label for="exampleInputFile">
+						Carga de Archivo Mensual
+					</label>
+					<input type="file" class="form-control-file" id="exampleInputFile" />
+					<p class="help-block">
+						Seleccione Mes a Subir.
+					</p>
+				</div>
+				
+				<button type="submit" class="btn btn-sm btn-primary">
+					<i class='fa fa-upload'></i> Subir Archivo
+				</button>
+			</form>
+
+
+<table>
+    <hr>
+        <td>ID</td>
+        <td>DOCUMENTO</td>
+        <td>NOMBRE</td>
+    </hr>
+       
+{% for elemento in liquidacion %}    
+    <tr>
+        <td>{{elemento.id}}</td>
+        <td>{{elemento.documento}}</td>
+        <td>{{elemento.nombre}}</td>
+        
+    </tr>
+{% endfor %}    
+
+</table>
+
+
+
+
+
+
+
+{% endblock %}
